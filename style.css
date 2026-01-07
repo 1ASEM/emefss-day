@@ -1,0 +1,261 @@
+/* ---------------------- */
+/* Global Styles */
+/* ---------------------- */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* ---------------------- */
+/* Index Page Background */
+/* ---------------------- */
+body.index-page {
+  background: url('./images/pic3.jpg') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Overlay for readability */
+body.index-page .container::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}
+
+/* ---------------------- */
+/* Love Page Background & Animation */
+/* ---------------------- */
+body.love-page {
+  background: url('./images/pic4.jpg') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  animation: bgMove 20s linear infinite alternate;
+}
+
+/* Background parallax animation */
+@keyframes bgMove {
+  0% { background-position: center top; }
+  100% { background-position: center bottom; }
+}
+
+/* Container styling */
+.container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 80px 20px;
+  backdrop-filter: brightness(0.5);
+}
+
+/* ---------------------- */
+/* Headings & Text */
+/* ---------------------- */
+h1 {
+  font-size: 3rem;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+h2 {
+  font-size: 2rem;
+  margin: 40px 0 20px 0;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 50px;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* ---------------------- */
+/* Fade-in Sections */
+/* ---------------------- */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------------------- */
+/* Confetti Styling */
+/* ---------------------- */
+.confetti {
+  position: fixed;
+  top: -10px;
+  z-index: 9999;
+  opacity: 0.8;
+  border-radius: 50%;
+  animation: fall 4s linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* ---------------------- */
+/* Floating Hearts (Love Page) */
+/* ---------------------- */
+.floating-heart {
+  position: fixed;
+  width: 15px;
+  height: 15px;
+  background-color: #ff6b6b;
+  border-radius: 50%;
+  opacity: 0.8;
+  pointer-events: none;
+  animation: floatUp 5s linear infinite;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0) scale(1); opacity: 0.8; }
+  50% { transform: translateY(-50px) scale(1.2); opacity: 1; }
+  100% { transform: translateY(-200px) scale(0.8); opacity: 0; }
+}
+
+/* ---------------------- */
+/* Buttons */
+/* ---------------------- */
+.btn {
+  background-color: #c9a24d;
+  color: #000000;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  display: inline-block;
+  margin-top: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* ---------------------- */
+/* Footer */
+/* ---------------------- */
+footer {
+  margin-top: 50px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+}
+
+/* ---------------------- */
+/* Plan Cards (Montgomery & Makoso) */
+/* ---------------------- */
+.plan-card {
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 600px;
+  margin: 30px auto;
+  text-align: left;
+  line-height: 1.6;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  position: relative;
+  overflow: hidden;
+  border: 2px solid rgba(255,255,255,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.plan-card:hover {
+  transform: scale(1.06) rotate(-1deg);
+  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.3);
+}
+
+.plan-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 0;
+}
+
+.plan-card p {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+}
+
+/* Specific backgrounds */
+.montgomery {
+  background-image: url('./images/montgomery.jpg');
+}
+
+.makoso {
+  background-image: url('./images/makoso.jpg');
+}
+
+/* ---------------------- */
+/* Gallery Cards */
+/* ---------------------- */
+.gallery-card {
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  max-width: 400px;
+  height: 250px;
+  margin: 20px auto;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+.gallery-card:hover {
+  transform: scale(1.05) rotate(-1deg);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+}
+
+.gallery-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.2);
+  z-index: 0;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  display: block;
+  position: relative;
+  z-index: 1;
+  @media (max-width: 480px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  .plan-card, .gallery-card { max-width: 90%; height: auto; padding: 25px; }
+  .container { padding: 50px 15px; }
+}
+
+}
